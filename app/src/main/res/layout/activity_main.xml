@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.MainActivity">
+
+
+    <TextView
+            android:id="@+id/btnStartOfflineActivity"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:background="@color/colorOfflineListButtonBg"
+            android:textColor="@android:color/white"
+            android:text="Offline List"/>
+    <TextView
+            android:id="@+id/btnStartOnlineActivity"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:background="@color/colorOnlineListButtonBg"
+            android:textColor="@android:color/white"
+            android:text="Online List"/>
+</LinearLayout>

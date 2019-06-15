@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KotlinNetworkCalls</string>
+    <string name="offline_title">OfflineList</string>
+    <string name="online_title">OnlineList</string>
+</resources>
