@@ -2,6 +2,8 @@ package com.droiddigger.kotlinnetworkcalls.activities
 
 import android.os.Bundle
 import android.os.RecoverySystem
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +24,7 @@ class NetworkCallList : AppCompatActivity() {
 
     lateinit var mPostRecyclerView: RecyclerView
     var dataList = ArrayList<Posts>()
+    var progressBar: ProgressBar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +39,8 @@ class NetworkCallList : AppCompatActivity() {
         setContentView(R.layout.activity_network_call_list)
         setTitle(R.string.online_title)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        mPostRecyclerView = findViewById(R.id.rvOnlineList);
+        mPostRecyclerView = findViewById(R.id.rvOnlineList)
+        progressBar = findViewById(R.id.pbLoader)
     }
 
     private fun initFunctionalities() {
@@ -50,7 +54,7 @@ class NetworkCallList : AppCompatActivity() {
         networkCall.enqueue(object : Callback<List<Posts>> {
 
             override fun onResponse(call: Call<List<Posts>>?, response: Response<List<Posts>>?) {
-
+                progressBar?.visibility = View.GONE
                 dataList.addAll(response!!.body()!!)
                 rvOnlineList.adapter?.notifyDataSetChanged()
             }
